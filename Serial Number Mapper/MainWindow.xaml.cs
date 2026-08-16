@@ -67,9 +67,6 @@ namespace Serial_Number_Mapper
             request.Headers.Add("authUsername", "$({AUTH_USERNAME})");
             request.Headers.Add("authPassword", "$({AUTH_PASSWORD})");
 
-            request.Headers.Add("authUsername", "");
-            request.Headers.Add("authPassword", "");
-
             var content = new StreamContent(File.OpenRead(_selectedFilePath));
             request.Content = content;
             var response = await client.SendAsync(request);
