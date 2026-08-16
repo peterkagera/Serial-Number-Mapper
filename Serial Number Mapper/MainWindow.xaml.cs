@@ -63,8 +63,8 @@ namespace Serial_Number_Mapper
 
             var client = new HttpClient();
             var request = new HttpRequestMessage(HttpMethod.Post, "${API_ENDPOINT}");
-            request.Headers.Add("authUsername", "SHOPIFY.MASTER");
-            request.Headers.Add("authPassword", "12345");
+            request.Headers.Add("authUsername", "");
+            request.Headers.Add("authPassword", "");
             var content = new StreamContent(File.OpenRead(_selectedFilePath));
             request.Content = content;
             var response = await client.SendAsync(request);
