@@ -63,8 +63,13 @@ namespace Serial_Number_Mapper
 
             var client = new HttpClient();
             var request = new HttpRequestMessage(HttpMethod.Post, "${API_ENDPOINT}");
+<<<<<<< HEAD
+            request.Headers.Add("authUsername", "$({AUTH_USERNAME})");
+            request.Headers.Add("authPassword", "$({AUTH_PASSWORD})");
+=======
             request.Headers.Add("authUsername", "");
             request.Headers.Add("authPassword", "");
+>>>>>>> ab8436abfadc4b523d58f8e489d1ed628eb05ae8
             var content = new StreamContent(File.OpenRead(_selectedFilePath));
             request.Content = content;
             var response = await client.SendAsync(request);
